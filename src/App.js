@@ -1,11 +1,25 @@
-import { Header } from "./Components/Header/Header";
+import { Header } from './Components/Header/Header'
+import { Navbar } from './Components/Navbar/Navbar'
+import { Profile } from './Components/Profile/Profile'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import './App.css'
+import { Dialogs } from './Components/Dialogs/Dialogs'
 function App() {
-  return (
-    <div className="App">
-      <Header />
-    </div>
-  );
+	return (
+		<BrowserRouter>
+			<div className='app-wrapper'>
+				<Header name='Vlados' />
+				<Navbar />
+				{/*<Profile />*/}
+				<div className='app-wrapper-content'>
+					<Routes>
+						<Route path='/profile' element={<Profile />} />
+					</Routes>
+				</div>
+			</div>
+		</BrowserRouter>
+	)
 }
 
-export default App;
+export default App
