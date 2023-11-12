@@ -1,3 +1,11 @@
+import { Profileinfo } from './Profileinfo/Profileinfo'
+import { MyPosts } from './MyPosts/MyPosts'
+
 export const Profile = () => {
-	return <div>Привет сдесь ПРОФИЛЬ!</div>
+	return (
+		<div>
+			<Profileinfo />
+			<MyPosts />
+		</div>
+	)
 }

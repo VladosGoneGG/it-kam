@@ -1,0 +1,15 @@
+/*.item{*/
+/*    color: white;*/
+/*}*/
+
+/*.item .active{*/
+/*    color: gold;*/
+/*}*/
+
+.item {
+    color: blue;
+    /* Другие стили */
+}
+
+.active {color: gold;}
+
