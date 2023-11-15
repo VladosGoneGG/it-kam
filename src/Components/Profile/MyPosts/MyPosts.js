@@ -4,7 +4,7 @@ import React, { useRef } from 'react'
 import {
 	addPostActionCreator,
 	updateNewPostTextActionCreator
-} from '../../../Redux/State'
+} from '../../../Redux/profile-reducer'
 
 export const MyPosts = (props) => {
 	const postEl = props.posts.map((el) => {

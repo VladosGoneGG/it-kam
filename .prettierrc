@@ -5,5 +5,8 @@
   "arrowParens": "always",
   "semi": false,
   "trailingComma": "none",
-  "useTabs": true
+  "useTabs": true,
+  "bracketSpacing": true,
+  "endOfLine": "auto",
+  "insertPragma": false
 }

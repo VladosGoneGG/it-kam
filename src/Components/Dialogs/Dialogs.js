@@ -4,7 +4,7 @@ import { Message } from './Message/Message'
 import {
 	sendMessageCreator,
 	updateNewMessageBodyCreator
-} from '../../Redux/State'
+} from '../../Redux/dialogs-reducer'
 
 export const Dialogs = (props) => {
 	let { dialogs, message, newMessageBody } = props.store.getState()
