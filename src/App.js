@@ -31,12 +31,7 @@ function App(props) {
 					/>
 					<Route
 						path='/dialogs/*'
-						element={
-							<Dialogs
-								dialogs={props.state.dialogs}
-								message={props.state.message}
-							/>
-						}
+						element={<Dialogs store={props.store} />}
 					/>
 					<Route path='/news/*' element={<News />} />
 					<Route path='/music/*' element={<Music />} />
