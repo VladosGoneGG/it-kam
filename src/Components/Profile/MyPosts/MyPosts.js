@@ -19,10 +19,8 @@ export const MyPosts = (props) => {
 		props.dispatch(addPostActionCreator())
 	}
 
-	const onPostChange = (newPostElement) => {
-		let action = updateNewPostTextActionCreator(
-			newPostElement.current.value
-		)
+	const onPostChange = (event) => {
+		let action = updateNewPostTextActionCreator(event.target.value)
 		props.dispatch(action)
 	}
 

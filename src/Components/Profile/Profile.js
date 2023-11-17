@@ -6,8 +6,8 @@ export const Profile = (props) => {
 		<div>
 			<Profileinfo />
 			<MyPosts
-				posts={props.posts}
-				newPostText={props.newPostText}
+				posts={props.profilePage.posts}
+				newPostText={props.profilePage.newPostText}
 				dispatch={props.dispatch}
 			/>
 		</div>
