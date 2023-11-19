@@ -25,12 +25,12 @@ export const Navbar = () => {
 			</div>
 			<div className={s.item}>
 				<NavLink
-					to='/news'
+					to='/users'
 					className={(navData) =>
 						navData.isActive ? s.active : s.item
 					}
 				>
-					News
+					Users
 				</NavLink>
 			</div>
 			<div className={s.item}>
