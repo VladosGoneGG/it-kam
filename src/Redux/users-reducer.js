@@ -3,6 +3,8 @@ const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET_USERS'
 const SET_PAGE = 'SET_PAGE'
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT'
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
+
 let initialState = {
 	users: [
 		// {
@@ -35,8 +37,10 @@ let initialState = {
 	],
 	pageSize: 5,
 	totalUsersCount: 0,
-	currentPage: 1
+	currentPage: 1,
+	isFeching: false
 }
+
 const usersReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case FOLLOW:
@@ -71,6 +75,10 @@ const usersReducer = (state = initialState, action) => {
 			return { ...state, totalUsersCount: action.count }
 		}
 
+		case TOGGLE_IS_FETCHING: {
+			return { ...state, isFeching: action.isFeching }
+		}
+
 		default:
 			return state
 	}
@@ -98,6 +106,11 @@ export const setCurrentPageAC = (currentPage) => ({
 export const setUsersTotalCountAC = (totalUsersCount) => ({
 	type: SET_TOTAL_USERS_COUNT,
 	count: totalUsersCount
+})
+
+export const toggleIsFetchingAC = (isFeching) => ({
+	type: TOGGLE_IS_FETCHING,
+	isFeching
 })
 
 export default usersReducer
