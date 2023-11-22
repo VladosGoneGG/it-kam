@@ -11,21 +11,26 @@ import UsersContainer from './Components/Users/UsersContainer'
 
 function App() {
 	return (
-		<div className='app-wrapper'>
-			<div>
-				<Header name='Vlados' />
-			</div>
-			<div>
-				<Navbar />
-			</div>
-			<div className='app-wrapper-content'>
-				<Routes>
-					<Route path='/profile/*' element={<Profile />} />
-					<Route path='/dialogs/*' element={<DialogsContainer />} />
-					<Route path='/users/*' element={<UsersContainer />} />
-					<Route path='/music/*' element={<Music />} />
-					<Route path='/settings/*' element={<Settings />} />
-				</Routes>
+		<div className='bg-blue-500'>
+			<div className='md:container md:mx-auto flex-col bg-slate-200'>
+				<div className=' flex justify-center bg-cyan-200'>
+					<Header />
+				</div>
+				<div>
+					<Navbar />
+				</div>
+				<div>
+					<Routes>
+						<Route path='/profile/*' element={<Profile />} />
+						<Route
+							path='/dialogs/*'
+							element={<DialogsContainer />}
+						/>
+						<Route path='/users/*' element={<UsersContainer />} />
+						<Route path='/music/*' element={<Music />} />
+						<Route path='/settings/*' element={<Settings />} />
+					</Routes>
+				</div>
 			</div>
 		</div>
 	)

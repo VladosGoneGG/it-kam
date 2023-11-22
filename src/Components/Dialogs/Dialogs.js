@@ -1,4 +1,3 @@
-import s from './Dialogs.module.css'
 import { DialogItem } from './Dialogitem/Dialogitem'
 import { Message } from './Message/Message'
 
@@ -21,9 +20,9 @@ export const Dialogs = (props) => {
 	}
 
 	return (
-		<div className={s.dialogs}>
-			<div className={s.dialogsItems}>{DialogsEl}</div>
-			<div className={s.messages}>
+		<div className='flex gap-3 mt-3'>
+			<div>{DialogsEl}</div>
+			<div>
 				<div>{MessageEl}</div>
 				<div>
 					<div>
@@ -34,7 +33,12 @@ export const Dialogs = (props) => {
 						></textarea>
 					</div>
 					<div>
-						<button onClick={onSendMassageHandler}>Send</button>
+						<button
+							className='px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+							onClick={onSendMassageHandler}
+						>
+							Send
+						</button>
 					</div>
 				</div>
 			</div>

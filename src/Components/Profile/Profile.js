@@ -3,7 +3,7 @@ import MyPostsContainer from './MyPosts/MyPostContainer'
 
 export const Profile = () => {
 	return (
-		<div>
+		<div className='flex justify-center'>
 			<Profileinfo />
 			<MyPostsContainer />
 		</div>

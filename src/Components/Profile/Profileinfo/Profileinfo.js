@@ -4,7 +4,7 @@ export const Profileinfo = () => {
 		<div>
 			<div>
 				<img
-					className={s.images}
+					className=' w-52'
 					src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Star_Wars_characters_at_Madame_Tussaud.jpg/1200px-Star_Wars_characters_at_Madame_Tussaud.jpg'
 					alt='star'
 				/>
