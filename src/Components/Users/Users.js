@@ -1,46 +1,42 @@
+import React from 'react'
 import styles from './users.module.css'
-export const Users = (props) => {
-	if (props.users.length === 0) {
-		props.setUsers([
-			{
-				id: 1,
-				photoUrl:
-					'http://www.pict.ru/images/avatars/avatar-face-in-round2.gif',
-				followed: false,
-				fullName: 'Dmitry',
-				status: 'i am boss',
-				location: { city: 'Minsk', country: 'Belarus' }
-			},
-			{
-				id: 2,
-				photoUrl:
-					'http://www.pict.ru/images/avatars/avatar-face-in-round2.gif',
-				followed: true,
-				fullName: 'Sasha',
-				status: 'I like anime',
-				location: { city: 'Moscow', country: 'Russia' }
-			},
-			{
-				id: 3,
-				photoUrl:
-					'http://www.pict.ru/images/avatars/avatar-face-in-round2.gif',
-				followed: false,
-				fullName: 'Andrew',
-				status: 'I learn React',
-				location: { city: 'Kiev', country: 'Ukraine' }
-			}
-		])
+import userPhoto from '../../assets/images/User-img.jpg'
+
+const Users = (props) => {
+	let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
+
+	let pages = []
+	for (let i = 1; i <= pagesCount; i++) {
+		pages.push(i)
 	}
 
 	return (
 		<div>
+			<div>
+				{pages.map((p) => {
+					return (
+						<span
+							className={
+								props.currentPage === p && styles.selectedPage
+							}
+							onClick={(e) => props.onPageHandler(p)}
+						>
+							{p}
+						</span>
+					)
+				})}
+			</div>
 			{props.users.map((u) => (
 				<div key={u.id}>
 					<span>
 						<div>
 							<img
 								alt={'avatar'}
-								src={u.photoUrl}
+								src={
+									u.photos.small != null
+										? u.photos.small
+										: userPhoto
+								}
 								className={styles.usersPhoto}
 							/>
 						</div>
@@ -66,12 +62,12 @@ export const Users = (props) => {
 					</span>
 					<span>
 						<span>
-							<div>{u.fullName}</div>
+							<div>{u.name}</div>
 							<div>{u.status}</div>
 						</span>
 						<span>
-							<div>{u.location.city.country}</div>
-							<div>{u.location.city}</div>
+							<div>{'u.location.city.country'}</div>
+							<div>{'u.location.city'}</div>
 						</span>
 					</span>
 				</div>
@@ -79,3 +75,5 @@ export const Users = (props) => {
 		</div>
 	)
 }
+
+export default Users
