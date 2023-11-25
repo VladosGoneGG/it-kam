@@ -1,7 +1,12 @@
+import Preloader from '../../Common/preloader/Preloader'
 import s from './Profileinfo.module.css'
-export const Profileinfo = () => {
+export const Profileinfo = (props) => {
+	if (!props.profile) {
+		return <Preloader />
+	}
+
 	return (
-		<div>
+		<div className='flex-col'>
 			<div>
 				<img
 					className=' w-52'
@@ -9,7 +14,10 @@ export const Profileinfo = () => {
 					alt='star'
 				/>
 			</div>
-			<div className={s.discriptionBlock}>ava + description</div>
+			<div className={s.discriptionBlock}>
+				<img alt={'userPhoto'} src={props.profile.photos.large} />
+				ava + description
+			</div>
 		</div>
 	)
 }
