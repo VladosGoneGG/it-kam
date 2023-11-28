@@ -1,4 +1,3 @@
-import { Header } from './Components/Header/Header'
 import { Navbar } from './Components/Navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
 
@@ -8,13 +7,14 @@ import { Settings } from './Components/Settings/Settings'
 import DialogsContainer from './Components/Dialogs/DialogsContainer'
 import UsersContainer from './Components/Users/UsersContainer'
 import ProfileContainer from './Components/Profile/Profileinfo/ProfileContainer'
+import HeaderContainer from './Components/Header/HeaderContainer'
 
 function App() {
 	return (
 		<div className='bg-blue-500'>
 			<div className='md:container md:mx-auto flex-col bg-slate-200'>
-				<div className=' flex justify-center bg-cyan-200'>
-					<Header />
+				<div className=' flex justify-end bg-cyan-200'>
+					<HeaderContainer />
 				</div>
 				<div>
 					<Navbar />
